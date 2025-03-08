@@ -1,0 +1,9 @@
+[package]
+name = "grep-lite"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+clap = "2"
+indoc = "2.0.6"
+regex = "1"
