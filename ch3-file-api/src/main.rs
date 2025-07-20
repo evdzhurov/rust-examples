@@ -1,6 +1,10 @@
 #![allow(unused_variables)]
 
-type File = String;
+#[derive(Debug)]
+struct File {
+    name: String,
+    data: Vec<u8>,
+}
 
 fn open(f: &mut File) -> bool {
     true
@@ -10,14 +14,29 @@ fn close(f: &mut File) -> bool {
     true
 }
 
-#[allow(dead_code)]
-fn read(f: &mut File, save_to: &mut Vec<u8>) -> ! {
-    unimplemented!()
+fn read(f: &File, save_to: &mut Vec<u8>) -> usize {
+    let mut tmp = f.data.clone();
+    let read_len = tmp.len();
+
+    save_to.reserve(read_len);
+    save_to.append(&mut tmp);
+    read_len
 }
 
 fn main() {
-    let mut f1 = File::from("f1.txt");
+    let mut f1 = File {
+        name: String::from("2.txt"),
+        data: vec![114, 117, 115, 116, 33],
+    };
+
+    let mut buffer: Vec<u8> = vec![];
     open(&mut f1);
-    // read(f1, vec![]);
+    let f1_len = read(&f1, &mut buffer);
     close(&mut f1);
+
+    let text = String::from_utf8_lossy(&buffer);
+
+    println!("{:?}", f1);
+    println!("{} is {} bytes long", &f1.name, f1_len);
+    println!("{}", text);
 }
