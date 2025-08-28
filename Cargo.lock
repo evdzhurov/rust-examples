@@ -56,6 +56,22 @@ name = "ch4-wrap-with-rc"
 version = "0.1.0"
 
 [[package]]
+name = "ch5-decode-f32"
+version = "0.1.0"
+
+[[package]]
+name = "ch5-endianness"
+version = "0.1.0"
+
+[[package]]
+name = "ch5-f32-as-u32"
+version = "0.1.0"
+
+[[package]]
+name = "ch5-u16-overflow"
+version = "0.1.0"
+
+[[package]]
 name = "clap"
 version = "2.34.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"

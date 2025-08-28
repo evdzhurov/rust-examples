@@ -1,0 +1,6 @@
+[package]
+name = "ch5-u16-overflow"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
