@@ -3,7 +3,7 @@ members = [
     "rust-in-action/ch3-file-api",
     "rust-in-action/ch4-cubesat",
     "rust-in-action/ch4-wrap-with-rc",
-    "rust-in-action/grep-lite",
-    "rust-in-action/mandelbrot",
+    "rust-in-action/ch2-grep-lite",
+    "rust-in-action/ch2-mandelbrot",
 ]
 resolver = "2"
