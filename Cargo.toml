@@ -1,3 +1,9 @@
 [workspace]
-members = [ "ch3-file-api", "ch4-cubesat", "ch4-wrap-with-rc", "grep-lite","mandelbrot"]
+members = [
+    "rust-in-action/ch3-file-api",
+    "rust-in-action/ch4-cubesat",
+    "rust-in-action/ch4-wrap-with-rc",
+    "rust-in-action/grep-lite",
+    "rust-in-action/mandelbrot",
+]
 resolver = "2"
