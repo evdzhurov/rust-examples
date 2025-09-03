@@ -8,6 +8,6 @@ fn mock_rand(n: u8) -> f32 {
 
 fn main() {
     println!("max of input range: {:08b} -> {:?}", 0xff, mock_rand(0xff));
-    println!("mid of input range: {:08b} -> {:?}", 0xff, mock_rand(0x7f));
-    println!("min of input range: {:08b} -> {:?}", 0xff, mock_rand(0x00));
+    println!("mid of input range: {:08b} -> {:?}", 0x7f, mock_rand(0x7f));
+    println!("min of input range: {:08b} -> {:?}", 0x00, mock_rand(0x00));
 }
