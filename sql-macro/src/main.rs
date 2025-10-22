@@ -28,8 +28,13 @@ fn main() {
     println!("{:?}", results);
 
     let results: Vec<(String, i64)> =
-        query!(from db select title, rating where rating = 10 and artist = "Teddy Swims");
+        query!(from db select title, rating where rating == 10 and artist == "Teddy Swims");
     // > [("Bad Dreams", 10)]
+
+    println!("{:?}", results);
+
+    let results: Vec<(String, i64)> =
+        query!(from db select title, rating where rating > 9 or artist == "Tool");
 
     println!("{:?}", results);
 }
