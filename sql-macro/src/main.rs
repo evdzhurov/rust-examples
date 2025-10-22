@@ -17,8 +17,19 @@ fn main() {
         Song::new("Come as you are".to_string(), "Nirvana".to_string(), 9),
     ];
 
-    let results: Vec<String> = query!(from db select title);
-    // > ["Hate Me", "Not Like Us", "Bad Dreams", "Rockin' the Suburbs", "Lateralus", "Lose Control", "Come as you are"]
+    let results: Vec<(String,)> = query!(from db select title);
+    // > [("Hate Me",), ("Not Like Us",), ("Bad Dreams",), ("Rockin' the Suburbs",), ("Lateralus",), ("Lose Control",), ("Come as you are",)]
+
+    println!("{:?}", results);
+
+    let results: Vec<(String, i64)> = query!(from db select title, rating);
+    // > [("Hate Me", 9), ("Not Like Us", 10), ("Bad Dreams", 10), ("Rockin' the Suburbs", 6), ("Lateralus", 8), ("Lose Control", 9), ("Come as you are", 9)]
+
+    println!("{:?}", results);
+
+    let results: Vec<(String, i64)> =
+        query!(from db select title, rating where rating = 10 and artist = "Teddy Swims");
+    // > [("Bad Dreams", 10)]
 
     println!("{:?}", results);
 }
